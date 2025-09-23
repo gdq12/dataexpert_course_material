@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "dataexpert_community_bootcamp",
+	// "build": {
+	// 	// Sets the run context to one level up instead of the .devcontainer folder.
+	// 	"context": "../",
+	// 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+	// 	"dockerfile": "../Dockerfile"
+	// },
+	// build image manually via command line or docker desktop
+	"image": "dataexpert_community_bootcamp:latest",
+
+	// mounting files
+	"mounts": [
+		// mount folder to repo folder
+		"source=${localEnv:GITHUB_FOLDER},target=/workspaces/dataexpert_intermediate_bootcamp_2025/setup_python/code_folder,type=bind,consistency=cached"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8501,
+		8501
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.datawrangler"
+			]
+		}
+	},
+	// run environment vars
+	"runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "cat /etc/os-release",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "devcontainer"
+}
