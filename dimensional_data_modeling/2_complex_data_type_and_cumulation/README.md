@@ -3,7 +3,7 @@
 1. Spin up the containers from set up [README](../../setup_postgres/README.md)
 
     ```bash
-    ~/git_repos/dataexpert_intermediate_bootcamp_2025/1_dimensional_data_modeling/1_setup_postgres
+    ~/git_repos/dataexpert_intermediate_bootcamp_2025/setup_postgres
 
     make up
     ```

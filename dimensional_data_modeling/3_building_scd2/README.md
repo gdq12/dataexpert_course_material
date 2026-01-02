@@ -3,7 +3,7 @@
 1. Spin up the containers from set up [README](../../setup_postgres/README.md)
 
     ```bash
-    ~/git_repos/dataexpert_intermediate_bootcamp_2025/1_dimensional_data_modeling/1_setup_postgres
+    ~/git_repos/dataexpert_intermediate_bootcamp_2025/setup_postgres
 
     make up
     ```
@@ -38,19 +38,19 @@
 
     ```sql 
     create table players (
-    player_name text,
-    height text,
-    college text, 
-    country text,
-    draft_year text, 
-    draft_round text, 
-    draft_number text,
-    season_stats season_stats[],
-    scoring_class scoring_class, 
-    years_since_last_season integer,
-    is_active boolean,
-    season integer,
-    primary key(player_name, current_season)
+        player_name text,
+        height text,
+        college text, 
+        country text,
+        draft_year text, 
+        draft_round text, 
+        draft_number text,
+        season_stats season_stats[],
+        scoring_class scoring_class, 
+        years_since_last_season integer,
+        is_active boolean,
+        season integer,
+    primary key(player_name, season)
     )
     ;
     ```
