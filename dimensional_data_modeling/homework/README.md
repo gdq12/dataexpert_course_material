@@ -40,3 +40,13 @@ The primary key for this dataset is (`actor_id`, `film_id`).
 4. **Backfill query for `actors_history_scd`:** Write a "backfill" query that can populate the entire `actors_history_scd` table in a single query.
     
 5. **Incremental query for `actors_history_scd`:** Write an "incremental" query that combines the previous year's SCD data with new incoming data from the `actors` table.
+
+
+# Feddback Highlights 
+
+* avoid using an array as a primary key --> its mutable and large --> can permit multiple rows of identical entries which defeats the PK purpose 
+* recommend using just IDs and timestamps for PK, makes the tbls and queries more efficient 
+* implement not null concepts into the DDL for important dimensions --> make it based on the incremental load logic --> can trigger a fail and therefor highlight edge case flows in logic 
+* for quality measuring dimensions (like quality_class and is_active) consider having a default value when null, verify that it fits with incremental logic 
+* be wary of accumulation of arrays, can lead to exploding row size --> verify the accumulation is reflective of the data related to the respective record and not anything else--> the accumulation should be a snapshot of the info related to that record --> aka avoid y.films || t.films
+* do not implement dimensions that are being tracked by SCD as a primary key to that tbl --> can end up with two identical periods differing only by is_active --> logic is off.
