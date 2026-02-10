@@ -210,7 +210,14 @@ __marimo__/
 
 # files that are work by product and not needed in git 
 **.DS_Store
+**.ipynb_checkpoints
 
 # keep teaching material local only for now 
 **.pdf
 **.zip
+
+# keeping some spark material local only 
+setup_spark/data**
+setup_spark/notebooks**
+setup_spark/src**
+setup_spark/warehouse**
