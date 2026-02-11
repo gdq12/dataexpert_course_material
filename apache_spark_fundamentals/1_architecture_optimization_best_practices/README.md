@@ -12,6 +12,8 @@
 
 3. When done working to spin down all the containers: `make down`
 
+4. for further setup configs or debugging checkout the [setup_spark/README.md](../../setup_spark/README.md).
+
 ### Working with Spark in jupyter 
 
 * creating a session and importing some data 
