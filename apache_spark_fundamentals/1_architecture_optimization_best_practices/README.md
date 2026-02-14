@@ -10,11 +10,15 @@
 
 2. Go to PGadmin UI: [http://localhost:8888](http://localhost:8888) 
 
-3. When done working to spin down all the containers: `make down`
+3. this lesson is based on python so use the `Python 3 (ipykernel)` when working with the notebooks.
 
-4. for further setup configs or debugging checkout the [setup_spark/README.md](../../setup_spark/README.md).
+4. When done working to spin down all the containers: `make down`
+
+5. for further setup configs or debugging checkout the [setup_spark/README.md](../../setup_spark/README.md).
 
 ### Working with Spark in jupyter 
+
+*using the [event_data_pyspark.ipynb](../../setup_spark/notebooks/event_data_pyspark.ipynb) notebook here.*
 
 * creating a session and importing some data 
 
